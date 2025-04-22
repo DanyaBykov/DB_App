@@ -1,0 +1,123 @@
+# DROP DATABASE IF EXISTS Medical_Screening;
+CREATE DATABASE IF NOT EXISTS Medical_Screening;
+USE Medical_Screening;
+
+CREATE TABLE IF NOT EXISTS Address (
+    Address_ID BIGINT UNSIGNED PRIMARY KEY AUTO_INCREMENT,
+    City VARCHAR(100),
+    Street VARCHAR(255),
+    Zip_Code VARCHAR(20)
+)ENGINE = innodb COMMENT ="Address Table";
+
+CREATE TABLE IF NOT EXISTS Patient (
+    Patient_ID BIGINT UNSIGNED PRIMARY KEY AUTO_INCREMENT,
+    First_Name VARCHAR(100),
+    Last_Name VARCHAR(100),
+    Gender ENUM('Male', 'Female', 'Other'),
+    Phone_Number VARCHAR(20),
+    Email VARCHAR(255)
+)ENGINE = INNODB COMMENT = "Patient Table";
+
+
+CREATE TABLE IF NOT EXISTS Doctor (
+    Doctor_ID BIGINT UNSIGNED PRIMARY KEY AUTO_INCREMENT,
+    First_Name VARCHAR(100),
+    Last_Name VARCHAR(100),
+    Gender ENUM('Male', 'Female', 'Other'),
+    Work_Experience INT
+)ENGINE = INNODB COMMENT = "Doctor Table";
+
+CREATE TABLE IF NOT EXISTS Hospital (
+    Hospital_ID BIGINT UNSIGNED PRIMARY KEY AUTO_INCREMENT,
+    Hospital_Name VARCHAR(255),
+    Capacity INT,
+    Phone_Number VARCHAR(15),
+    Email VARCHAR(100),
+    Address_ID BIGINT UNSIGNED,
+    FOREIGN KEY (`Address_ID`) REFERENCES `Address`(`Address_ID`) ON DELETE CASCADE ON UPDATE CASCADE
+)ENGINE = INNODB COMMENT = "Hospital Table";
+
+CREATE TABLE IF NOT EXISTS Appointment (
+    Appointment_ID BIGINT UNSIGNED PRIMARY KEY AUTO_INCREMENT,
+    Doctor_ID BIGINT UNSIGNED,
+    Patient_ID BIGINT UNSIGNED,
+    Status ENUM('Scheduled', 'Completed', 'Cancelled'),
+    Appointment_Date DATE,
+    FOREIGN KEY (`Doctor_ID`) REFERENCES `Doctor`(`Doctor_ID`) ON DELETE CASCADE ON UPDATE CASCADE,
+    FOREIGN KEY (`Patient_ID`) REFERENCES `Patient`(`Patient_ID`) ON DELETE CASCADE ON UPDATE CASCADE
+)ENGINE = INNODB COMMENT = "Appointment Table";
+
+CREATE TABLE IF NOT EXISTS Medical_History (
+    History_ID BIGINT UNSIGNED PRIMARY KEY AUTO_INCREMENT,
+    Patient_ID BIGINT UNSIGNED,
+    Date_of_last_checkup DATE,
+    FOREIGN KEY (`Patient_ID`) REFERENCES `Patient`(`Patient_ID`) ON DELETE CASCADE ON UPDATE CASCADE
+) ENGINE = InnoDB COMMENT = "Medical History Table";
+
+CREATE TABLE IF NOT EXISTS Medical_Notes (
+    Note_ID BIGINT UNSIGNED PRIMARY KEY AUTO_INCREMENT,
+    Patient_ID BIGINT UNSIGNED,
+    Note VARCHAR(255),
+    Type VARCHAR(255),
+    FOREIGN KEY (`Patient_ID`) REFERENCES `Patient`(`Patient_ID`) ON DELETE CASCADE ON UPDATE CASCADE
+) ENGINE = InnoDB COMMENT = "Medical Notes Table";
+
+
+CREATE TABLE IF NOT EXISTS Payment (
+    Payment_ID BIGINT UNSIGNED PRIMARY KEY AUTO_INCREMENT,
+    Patient_ID BIGINT UNSIGNED,
+    Amount DECIMAL(10, 2),
+    Payment_Date DATE,
+    Status VARCHAR(50),
+    FOREIGN KEY (`Patient_ID`) REFERENCES `Patient`(`Patient_ID`) ON DELETE CASCADE ON UPDATE CASCADE
+) ENGINE = InnoDB COMMENT = "Payment Table";
+
+
+CREATE TABLE IF NOT EXISTS Medical_Screening_Test (
+    Test_ID BIGINT UNSIGNED PRIMARY KEY AUTO_INCREMENT,
+    Test_Name VARCHAR(255),
+    Cost DOUBLE,
+    Payment_ID BIGINT UNSIGNED,
+    FOREIGN KEY (`Payment_ID`) REFERENCES `Payment`(`Payment_ID`) ON DELETE CASCADE ON UPDATE CASCADE
+) ENGINE = INNODB COMMENT = "Medical Screening Test Table";
+
+CREATE TABLE IF NOT EXISTS Required_Supplies (
+    ID BIGINT UNSIGNED PRIMARY KEY AUTO_INCREMENT,
+    Test_ID BIGINT UNSIGNED,
+    Supply_Name VARCHAR(255),
+    FOREIGN KEY (`Test_ID`) REFERENCES `Medical_Screening_Test`(`Test_ID`) ON DELETE CASCADE ON UPDATE CASCADE
+) ENGINE = InnoDB COMMENT = "Required Supplies Table";
+
+CREATE TABLE IF NOT EXISTS Medical_Screening_Result (
+    Result_ID BIGINT UNSIGNED PRIMARY KEY AUTO_INCREMENT,
+    Test_Name VARCHAR(255),
+    Result VARCHAR(255),
+    Test_ID BIGINT UNSIGNED,
+    Patient_ID BIGINT UNSIGNED,
+    FOREIGN KEY (`Test_ID`) REFERENCES `Medical_Screening_Test`(`Test_ID`) ON DELETE CASCADE ON UPDATE CASCADE,
+    FOREIGN KEY (`Patient_ID`) REFERENCES `Patient`(`Patient_ID`) ON DELETE CASCADE ON UPDATE CASCADE
+)ENGINE = INNODB COMMENT = "Medical Screening Result Table";
+
+CREATE TABLE IF NOT EXISTS Supply_Order (
+    Order_ID BIGINT UNSIGNED PRIMARY KEY AUTO_INCREMENT,
+    Test_ID BIGINT UNSIGNED,
+    Hospital_ID BIGINT UNSIGNED,
+    Order_Date DATE,
+    Status VARCHAR(50),
+    FOREIGN KEY (`Test_ID`) REFERENCES `Medical_Screening_Test`(`Test_ID`) ON DELETE CASCADE ON UPDATE CASCADE,
+    FOREIGN KEY (`Hospital_ID`) REFERENCES `Hospital`(`Hospital_ID`) ON DELETE CASCADE ON UPDATE CASCADE
+) ENGINE = InnoDB COMMENT = "Supply Order Table";
+
+CREATE TABLE IF NOT EXISTS Pharmacy (
+    Pharmacy_ID BIGINT UNSIGNED PRIMARY KEY AUTO_INCREMENT,
+    Name VARCHAR(255),
+    Order_ID BIGINT UNSIGNED,
+    FOREIGN KEY (`Order_ID`) REFERENCES `Supply_Order`(`Order_ID`) ON DELETE CASCADE ON UPDATE CASCADE
+) ENGINE = InnoDB COMMENT = "Pharmacy Table";
+
+CREATE TABLE IF NOT EXISTS Credit_Card_Company (
+    ID BIGINT UNSIGNED PRIMARY KEY AUTO_INCREMENT,
+    Company_Name VARCHAR(255),
+    Payment_ID BIGINT UNSIGNED,
+    FOREIGN KEY (`Payment_ID`) REFERENCES `Payment`(`Payment_ID`) ON DELETE CASCADE ON UPDATE CASCADE
+) ENGINE = InnoDB COMMENT = "Credit Card Company Table";

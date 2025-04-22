@@ -1,0 +1,37 @@
+Note_ID,Patient_ID,Note,Type
+1,1,Flu,Past_Diseases
+2,1,Appendectomy,Past_Surgeries
+3,1,Diabetes,Chronic_Conditions
+4,1,Flu treatment record,Medical_Treatment
+5,1,Penicillin,Allergies
+6,2,Asthma,Past_Diseases
+7,2,Asthma,Chronic_Conditions
+8,2,Asthma control,Medical_Treatment
+9,2,Dust,Allergies
+10,3,Tonsillectomy,Past_Surgeries
+11,3,Hypertension,Chronic_Conditions
+12,3,Routine checkup,Medical_Treatment
+13,3,Peanuts,Allergies
+14,4,Bronchitis,Past_Diseases
+15,4,Bronchitis record,Medical_Treatment
+16,4,Latex,Allergies
+17,5,Pneumonia,Past_Diseases
+18,5,Gallbladder removal,Past_Surgeries
+19,5,Pneumonia recovery,Medical_Treatment
+20,5,Shellfish,Allergies
+21,6,Chickenpox,Past_Diseases
+22,6,Diabetes,Chronic_Conditions
+23,6,Diabetic checkup,Medical_Treatment
+24,7,Flu,Past_Diseases
+25,7,Asthma,Chronic_Conditions
+26,7,Flu treatment,Medical_Treatment
+27,7,Dust,Allergies
+28,8,Knee Surgery,Past_Surgeries
+29,8,Post-op checkup,Medical_Treatment
+30,8,Sulfa,Allergies
+31,9,Sinusitis,Past_Diseases
+32,9,Hypertension,Chronic_Conditions
+33,9,Sinus medication,Medical_Treatment
+34,10,Cold,Past_Diseases
+35,10,Cold treatment,Medical_Treatment
+36,10,Pollen,Allergies

@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Screening Result Report</title>
+    <style>
+        /* Reset and Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            display: flex;
+            min-height: 100vh;
+        }
+        /* Sidebar styling */
+        .sidebar {
+            background-color: #007BFF;
+            color: white;
+            width: 250px;
+            padding: 20px;
+            box-shadow: 2px 0 5px rgba(0,0,0,0.1);
+        }
+        .sidebar h2 {
+            text-align: center;
+            margin-bottom: 20px;
+            font-size: 22px;
+        }
+        .sidebar ul {
+            list-style: none;
+        }
+        .sidebar li {
+            margin: 15px 0;
+        }
+        .sidebar a {
+            display: block;
+            text-decoration: none;
+            color: white;
+            padding: 10px;
+            border-radius: 4px;
+            transition: background-color 0.3s;
+        }
+        .sidebar a:hover {
+            background-color: #0056b3;
+        }
+        /* Main content styling */
+        .main-content {
+            flex: 1;
+            padding: 40px;
+        }
+        .main-content h1 {
+            margin-bottom: 20px;
+            color: #333;
+        }
+        /* Search form styling */
+        .search-form {
+            margin-bottom: 30px;
+        }
+        .search-form label {
+            font-size: 16px;
+            margin-right: 10px;
+        }
+        .search-form input[type="number"] {
+            padding: 8px;
+            font-size: 16px;
+            width: 200px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        .search-form input[type="submit"] {
+            padding: 8px 16px;
+            margin-left: 10px;
+            font-size: 16px;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .search-form input[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+        /* Table styling */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        table, th, td {
+            border: 1px solid #cccccc;
+        }
+        th, td {
+            padding: 12px 15px;
+            text-align: left;
+        }
+        th {
+            background-color: #007BFF;
+            color: #ffffff;
+        }
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+    </style>
+    <script>
+        // Redirect to the correct report route upon form submission.
+        function redirectToResult() {
+            var id = document.getElementById("result_id").value;
+            if (id) {
+                window.location.href = "/report/result/" + id;
+            }
+            return false;
+        }
+    </script>
+</head>
+<body>
+    <div class="sidebar">
+        <h2>Navigation</h2>
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/medical_note/add">Add Medical Note</a></li>
+            <li><a href="/appointment/update">Update Appointment</a></li>
+            <li><a href="/required_supplies/delete">Delete Required Supplies</a></li>
+            <li><a href="/report/appointment">Appointment Report</a></li>
+            <li><a href="/report/medical_notes">Medical Notes Report</a></li>
+            <li><a href="/report/result">Result Report</a></li>
+            <li><a href="/tests">Tests</a></li>
+        </ul>
+    </div>
+            <div class="main-content">
+                <h1>Screening Result Report</h1>
+                <div class="search-form">
+                  <form onsubmit="return redirectToResult();">
+                    <label for="result_id">Enter Result ID:</label>
+                    <input type="number" id="result_id" name="result_id" placeholder="e.g., 1" required>
+                    <input type="submit" value="Generate Report">
+                  </form>
+                </div>
+            
+                {% if result %}
+                <table>
+                  <thead>
+                    <tr>
+                      <th>Result ID</th>
+                      <th>Test Name</th>
+                      <th>Result</th>
+                      <th>Patient First Name</th>
+                      <th>Patient Last Name</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>{{ result.Result_ID }}</td>
+                      <td>{{ result.Test_Name }}</td>
+                      <td>{{ result.Result }}</td>
+                      <td>{{ result.First_Name }}</td>
+                      <td>{{ result.Last_Name }}</td>
+                    </tr>
+                  </tbody>
+                </table>
+                {% else %}
+                <p>Please enter a Result ID to generate the report.</p>
+                {% endif %}
+            </div>
+</body>
+</html>

@@ -1,0 +1,15 @@
+Specialization_ID,Hospital_ID,Specialization
+1,1,Cardiology
+2,2,Neurology
+3,3,Orthopedics
+4,4,Pediatrics
+5,5,Oncology
+6,6,Gynecology
+7,7,Urology
+8,8,Dermatology
+9,9,Psychiatry
+10,10,Radiology
+11,6,Urology
+12,6,Oncology
+13,2,Cardiology
+14,9,Pediatrics

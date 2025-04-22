@@ -1,0 +1,11 @@
+Hospital_ID;Hospital_Name;Capacity;Address_ID;Phone_Number;Email
+1;NY General;500;1;1234567890;info@nygeneral.org
+2;LA Medical;450;2;2345678901;contact@lamedical.org
+3;Chicago Central;400;3;3456789012;admin@chicagocentral.org
+4;Houston Health;350;4;4567890123;support@houstonhealth.org
+5;Phoenix Care;300;5;5678901234;hello@phoenixcare.org
+6;Philly Wellness;320;6;6789012345;staff@phillywellness.org
+7;San Antonio Med;310;7;7890123456;service@sanantoniomed.org
+8;San Diego Clinic;290;8;8901234567;mail@sandiegoclinic.org
+9;Dallas Hospital;410;9;9012345678;care@dallashospital.org
+10;San Jose Health;380;10;123456789;contact@sanjosehealth.org

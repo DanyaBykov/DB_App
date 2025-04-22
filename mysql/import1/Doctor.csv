@@ -1,0 +1,11 @@
+Doctor_ID,First_Name,Last_Name,Date_of_Birth,Gender,Phone_Number,Email,Work_Experience,Age,Address_ID
+1,Michael,Brown,1975-09-12,Male,987-654-320,doctor1@hospital.com,20,48,1
+2,Emily,Jones,1980-04-15,Female,987-654-321,doctor2@hospital.com,15,43,2
+3,David,Miller,1969-11-20,Male,987-654-322,doctor3@hospital.com,25,54,3
+4,Sarah,Davis,1983-01-05,Female,987-654-323,doctor4@hospital.com,12,41,4
+5,Robert,Garcia,1978-07-23,Male,987-654-324,doctor5@hospital.com,18,46,5
+6,Jessica,Rodriguez,1985-02-18,Female,987-654-325,doctor6@hospital.com,14,39,6
+7,Daniel,Martinez,1990-06-30,Male,987-654-326,doctor7@hospital.com,10,34,7
+8,Karen,Hernandez,1973-03-12,Female,987-654-327,doctor8@hospital.com,22,51,8
+9,William,Lopez,1982-08-25,Male,987-654-328,doctor9@hospital.com,17,44,9
+10,Emma,Gonzalez,1976-12-10,Female,987-654-329,doctor10@hospital.com,19,47,10

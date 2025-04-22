@@ -1,0 +1,11 @@
+Patient_ID,First_Name,Last_Name,Gender,Phone_Number,Email
+1,John,Doe,Male,1234567890,john.doe@example.com
+2,Jane,Smith,Female,2345678901,jane.smith@example.com
+3,Bob,Johnson,Male,3456789012,bob.j@example.com
+4,Alice,Williams,Female,4567890123,alice.w@example.com
+5,Tom,Brown,Male,5678901234,tom.b@example.com
+6,Lisa,Jones,Female,6789012345,lisa.j@example.com
+7,Mike,Miller,Male,7890123456,mike.m@example.com
+8,Karen,Davis,Female,8901234567,karen.d@example.com
+9,Chris,Wilson,Other,9012345678,chris.w@example.com
+10,Nina,Moore,Female,9123456789,nina.m@example.com

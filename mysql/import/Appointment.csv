@@ -1,0 +1,11 @@
+Appointment_ID,Doctor_ID,Patient_ID,Status,Appointment_Date
+1,1,1,Scheduled,2025-04-01
+2,2,2,Completed,2025-03-20
+3,3,3,Cancelled,2025-02-15
+4,4,4,Scheduled,2025-04-10
+5,5,5,Completed,2025-03-30
+6,6,6,Cancelled,2025-01-10
+7,7,7,Scheduled,2025-04-05
+8,8,8,Completed,2025-03-25
+9,9,9,Scheduled,2025-04-08
+10,10,10,Scheduled,2025-04-12

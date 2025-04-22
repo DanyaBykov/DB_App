@@ -1,0 +1,11 @@
+Result_ID,Test_Name,Result,Test_ID,Patient_ID
+1,Blood Test,Normal,1,1
+2,X-Ray,Fracture Detected,2,2
+3,MRI,No Abnormalities,3,3
+4,CT Scan,Brain Tumor Detected,4,4
+5,Ultrasound,Healthy,5,5
+6,ECG,Irregular Heartbeat,6,6
+7,Colonoscopy,Polyps Found,7,7
+8,Mammogram,No Issues,8,8
+9,Allergy Test,Mild Allergy,9,9
+10,Liver Function Test,Liver Enzyme Elevated,10,10

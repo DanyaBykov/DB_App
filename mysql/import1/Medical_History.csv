@@ -1,0 +1,11 @@
+History_ID,Patient_ID,Past_Diseases,Past_Surgeries,Chronic_Conditions,Date_of_last_checkup
+1,1,Diabetes,Appendectomy,None,2024-01-10
+2,2,Hypertension,Knee Surgery,Hypertension,2023-12-15
+3,3,Asthma,None,Asthma,2024-02-20
+4,4,None,None,Diabetes,2024-01-05
+5,5,Heart Disease,Bypass Surgery,Heart Disease,2023-11-22
+6,6,None,None,None,2024-03-10
+7,7,Arthritis,Hip Replacement,None,2023-10-30
+8,8,Allergies,None,None,2024-02-15
+9,9,None,None,None,2023-09-18
+10,10,Cancer,Tumor Removal,Cancer,2024-01-25

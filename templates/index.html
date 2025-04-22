@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Medical Screening App</title>
+    <style>
+        /* Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            min-height: 100vh;
+            background-color: #f4f4f9;
+        }
+        /* Sidebar styling */
+        .sidebar {
+            background-color: #007BFF;
+            color: white;
+            width: 250px;
+            padding: 20px;
+            box-shadow: 2px 0 5px rgba(0,0,0,0.1);
+        }
+        .sidebar h2 {
+            font-size: 22px;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        .sidebar ul {
+            list-style: none;
+        }
+        .sidebar li {
+            margin: 15px 0;
+        }
+        .sidebar a {
+            display: block;
+            text-decoration: none;
+            color: white;
+            font-size: 16px;
+            padding: 10px;
+            border-radius: 4px;
+            transition: background-color 0.3s ease;
+        }
+        .sidebar a:hover {
+            background-color: #0056b3;
+        }
+        /* Main content styling */
+        .main-content {
+            flex: 1;
+            padding: 40px;
+        }
+        .main-content h1 {
+            color: #333;
+            margin-bottom: 20px;
+        }
+        .main-content p {
+            font-size: 18px;
+            color: #555;
+        }
+    </style>
+</head>
+<body>
+    <div class="sidebar">
+        <h2>Navigation</h2>
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/medical_note/add">Add Medical Note</a></li>
+            <li><a href="/appointment/update">Update Appointment</a></li>
+            <li><a href="/required_supplies/delete">Delete Required Supplies</a></li>
+            <li><a href="/report/appointment">Appointment Report</a></li>
+            <li><a href="/report/medical_notes">Medical Notes Report</a></li>
+            <li><a href="/report/result">Result Report</a></li>
+            <li><a href="/tests">Tests</a></li>
+        </ul>
+    </div>
+    <div class="main-content">
+        <h1>Welcome to the Medical Screening App</h1>
+        <p>Select an option from the navigation menu to get started.</p>
+    </div>
+</body>
+</html>

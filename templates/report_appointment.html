@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Appointment Report</title>
+    <style>
+        /* Reset and Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            display: flex;
+            min-height: 100vh;
+        }
+        /* Sidebar styling */
+        .sidebar {
+            background-color: #007BFF;
+            color: white;
+            width: 250px;
+            padding: 20px;
+            box-shadow: 2px 0 5px rgba(0,0,0,0.1);
+        }
+        .sidebar h2 {
+            text-align: center;
+            margin-bottom: 20px;
+            font-size: 22px;
+        }
+        .sidebar ul {
+            list-style: none;
+        }
+        .sidebar li {
+            margin: 15px 0;
+        }
+        .sidebar a {
+            display: block;
+            text-decoration: none;
+            color: white;
+            padding: 10px;
+            border-radius: 4px;
+            transition: background-color 0.3s;
+        }
+        .sidebar a:hover {
+            background-color: #0056b3;
+        }
+        /* Main content styling */
+        .main-content {
+            flex: 1;
+            padding: 40px;
+        }
+        .main-content h1 {
+            margin-bottom: 20px;
+            color: #333;
+        }
+        /* Search form styling */
+        .search-form {
+            margin-bottom: 30px;
+        }
+        .search-form label {
+            font-size: 16px;
+            margin-right: 10px;
+        }
+        .search-form input[type="number"] {
+            padding: 8px;
+            font-size: 16px;
+            width: 200px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        .search-form input[type="submit"] {
+            padding: 8px 16px;
+            margin-left: 10px;
+            font-size: 16px;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .search-form input[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+        /* Table styling */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        table, th, td {
+            border: 1px solid #cccccc;
+        }
+        th, td {
+            padding: 12px 15px;
+            text-align: left;
+        }
+        th {
+            background-color: #007BFF;
+            color: #ffffff;
+        }
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+    </style>
+    <script>
+        // Redirect to the correct report route upon form submission.
+        function redirectToReport() {
+            var id = document.getElementById("appointment_id").value;
+            if (id) {
+                window.location.href = "/report/appointment/" + id;
+            }
+            return false;
+        }
+    </script>
+</head>
+<body>
+    <div class="sidebar">
+        <h2>Navigation</h2>
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/medical_note/add">Add Medical Note</a></li>
+            <li><a href="/appointment/update">Update Appointment</a></li>
+            <li><a href="/required_supplies/delete">Delete Required Supplies</a></li>
+            <li><a href="/report/appointment">Appointment Report</a></li>
+            <li><a href="/report/medical_notes">Medical Notes Report</a></li>
+            <li><a href="/report/result">Result Report</a></li>
+            <li><a href="/tests">Tests</a></li>
+        </ul>
+    </div>
+    <div class="main-content">
+        <h1>Appointment Report</h1>
+        <div class="search-form">
+            <form onsubmit="return redirectToReport();">
+                <label for="appointment_id">Enter Appointment ID:</label>
+                <input type="number" id="appointment_id" name="appointment_id" placeholder="e.g., 3" required>
+                <input type="submit" value="Generate Report">
+            </form>
+        </div>
+        {% if appointment %}
+        <table>
+            <thead>
+                <tr>
+                    <th>Appointment ID</th>
+                    <th>Date</th>
+                    <th>Doctor Name</th>
+                    <th>Patient First Name</th>
+                    <th>Patient Last Name</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>{{ appointment.Appointment_ID }}</td>
+                    <td>{{ appointment.Appointment_Date }}</td>
+                    <td>{{ appointment.Doctor_Name }}</td>
+                    <td>{{ appointment.Patient_First_Name }}</td>
+                    <td>{{ appointment.Patient_Last_Name }}</td>
+                </tr>
+            </tbody>
+        </table>
+        {% else %}
+        <p>Please enter an Appointment ID to generate the report.</p>
+        {% endif %}
+    </div>
+</body>
+</html>

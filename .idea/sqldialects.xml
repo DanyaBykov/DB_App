@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="SqlDialectMappings">
+    <file url="file://$PROJECT_DIR$/csv_file_loader.sql" dialect="MySQL" />
+    <file url="file://$PROJECT_DIR$/data_select.sql" dialect="MySQL" />
+    <file url="file://$PROJECT_DIR$/delete_data.sql" dialect="MySQL" />
+    <file url="file://$PROJECT_DIR$/loader.sql" dialect="MySQL" />
+    <file url="file://$PROJECT_DIR$/new_csv_loader.sql" dialect="MySQL" />
+    <file url="file://$PROJECT_DIR$/new_data_queries.sql" dialect="MySQL" />
+    <file url="file://$PROJECT_DIR$/new_loader.sql" dialect="MySQL" />
+    <file url="file://$PROJECT_DIR$/update_queries.sql" dialect="MySQL" />
+  </component>
+  <component name="SqlResolveMappings">
+    <file url="file://$PROJECT_DIR$/new_csv_loader.sql" scope="{&quot;node&quot;:{  &quot;@negative&quot;:&quot;1&quot;,  &quot;group&quot;:{   &quot;@kind&quot;:&quot;root&quot;,   &quot;node&quot;:{    &quot;@negative&quot;:&quot;1&quot;   }  } }}" />
+  </component>
+</project>

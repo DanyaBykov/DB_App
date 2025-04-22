@@ -1,0 +1,11 @@
+Test_ID,Test_Name,Result_Time,Cost
+1,Blood Test,30 min,50.0
+2,X-Ray,1 hour,100.0
+3,MRI,2 hours,500.0
+4,CT Scan,3 hours,700.0
+5,Ultrasound,45 min,150.0
+6,ECG,20 min,80.0
+7,Colonoscopy,1.5 hours,300.0
+8,Mammogram,40 min,120.0
+9,Allergy Test,25 min,90.0
+10,Liver Function Test,50 min,200.0
